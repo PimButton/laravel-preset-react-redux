@@ -18,7 +18,7 @@ const defaultState = {
     user: null
 };
 
-function authentication(state, action) {
+function authentication(state = defaultState, action) {
     switch(action.type) {
         default:
             return state;
