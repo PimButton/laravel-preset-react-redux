@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto+Slab");
+
+body {
+    font-family: $font;
+    color: $text-color;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}
+
+h1,
+h2, 
+h3, 
+h4,
+h5,
+h6 {
+    font-family: $font-headings;
+    font-weight: $font-weight-headings;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 32px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -.4px;
+}
+
+h4 {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0px;
+}
+
+h5 {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+

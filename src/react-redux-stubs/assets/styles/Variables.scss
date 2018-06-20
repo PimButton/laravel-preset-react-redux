@@ -1,0 +1,45 @@
+/**===========================================================
+ * Variables
+ ===========================================================*/
+
+// Fonts
+$open-sans: 'Open Sans', sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+
+// Colors
+$blue: #354BB7;
+$blue-light: #F3F8FC;
+$blue-dark: #181466;
+$purple: #3A1C8E;
+$pink: #F93564;
+$yellow: #FFC73B;
+
+// Grayscales
+$white: #FFFFFF;
+$grey-light: #F5F8FB;
+$grey: #808080;
+$black: #1A1A1A;
+
+/**===========================================================
+ * Settings
+ ===========================================================*/
+
+// Typography
+$font: $open-sans;
+$font-headings: $roboto-slab;
+$text-color: $black;
+$font-weight: 300;
+$font-weight-headings: 800;
+$line-height: 1.6;
+$font-size: 12px;
+
+// Components
+$background-color: $blue-light;
+$header-background: $blue;
+$header-color: $white;
+
+// General
+$primary-color: $blue;
+$secondary-color: $purple;
+$tertiary-color: $pink;
+$quaternary-color: $yellow;
