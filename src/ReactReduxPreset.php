@@ -28,7 +28,7 @@ class ReactReduxPreset extends Preset
      *
      * @return void
      */
-    protected static function updatePackages()
+    protected static function updatePackages($dev = true)
     {
         if (! file_exists(base_path('package.json'))) {
             return;
@@ -99,7 +99,10 @@ class ReactReduxPreset extends Preset
         // packages to remove from the package.json
         $packagesToRemove = ['vue', 'jquery', 'bootstrap', 'popper.js', 'lodash', 'axios'];
 
-        return $packagesToAdd + Arr::except($packages, $packagesToRemove);
+        return [
+            'dependencies' => $packagesToAdd,
+            'devDependencies' => $packagesToAddDev + Arr::except($packages['devDependencies'], $packagesToRemove),
+        ];    
     }
 
     /**
@@ -172,7 +175,7 @@ class ReactReduxPreset extends Preset
      */
     protected static function updateWebpackConfiguration()
     {
-        copy(__DIR__.'/react-redux/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__.'/react-redux/.eslintrc', base_path('.eslintrc'));
+        copy(__DIR__.'/react-redux-stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__.'/react-redux-stubs/.eslintrc.js', base_path('.eslintrc'));
     }
 }
