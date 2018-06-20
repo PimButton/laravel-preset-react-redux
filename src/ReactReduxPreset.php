@@ -62,10 +62,6 @@ class ReactReduxPreset extends Preset
     {
         // packages to add to the package.json
         $packagesToAdd = [
-            '@fortawesome/fontawesome' => '^1.1.8',
-            '@fortawesome/fontawesome-pro-light' => '^5.0.13',
-            '@fortawesome/fontawesome-pro-solid' => '^5.0.13',
-            '@fortawesome/react-fontawesome' => '0.0.20',
             'axios' => '^0.18',
             'history' => '^4.7.2',
             'localforage' => '^1.7.1',
