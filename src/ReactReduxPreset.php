@@ -147,7 +147,7 @@ class ReactReduxPreset extends Preset
         );
 
         // copy new one from your stubs folder
-        copy(__DIR__.'/react-redux-stubs/views/react.blade.php', resource_path('views/react.blade.php'));
+        copy(__DIR__.'/react-redux-stubs/views/react.blade.php', resource_path('views/welcome.blade.php'));
     }
 
     /**
@@ -155,18 +155,18 @@ class ReactReduxPreset extends Preset
      *
      * @return void
      */
-    protected static function addAuthTemplates()
-    {
-        // Add Home controller
-        copy(__DIR__.'/stubs-stubs/Controllers/ReactController.php', app_path('Http/Controllers/ReactController.php'));
+    // protected static function addAuthTemplates()
+    // {
+    //     // Add Home controller
+    //     copy(__DIR__.'/stubs-stubs/Controllers/ReactController.php', app_path('Http/Controllers/ReactController.php'));
 
-        // Add Auth routes in 'routes/web.php'
-        $auth_route_entry = "Auth::routes();\n\nRoute::get('/', 'ReactController@index')->name('react');\n\n";
-        file_put_contents('./routes/web.php', $auth_route_entry, FILE_APPEND);
+    //     // Add Auth routes in 'routes/web.php'
+    //     $auth_route_entry = "Auth::routes();\n\nRoute::get('/', 'ReactController@index')->name('react');\n\n";
+    //     file_put_contents('./routes/web.php', $auth_route_entry, FILE_APPEND);
 
-        // Copy Skeleton auth views from the stubs folder
-        (new Filesystem)->copyDirectory(__DIR__.'/foundation-stubs/views', resource_path('views'));
-    }
+    //     // Copy Skeleton auth views from the stubs folder
+    //     (new Filesystem)->copyDirectory(__DIR__.'/foundation-stubs/views', resource_path('views'));
+    // }
 
     /**
      * Update the Webpack configuration.
