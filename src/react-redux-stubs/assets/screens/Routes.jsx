@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router';
+import { Switch } from 'react-router';
+import { AuthenticatedRoute, UnauthenticatedRoute } from 'components/Route';
 
 /**
  * Import pages and routes
@@ -11,7 +12,7 @@ class Routes extends Component {
     render() {
         return (
             <Switch>
-                <Route path='/' component={Home} />
+                <UnauthenticatedRoute path='/' component={Home} />
             </Switch>
         );
     }

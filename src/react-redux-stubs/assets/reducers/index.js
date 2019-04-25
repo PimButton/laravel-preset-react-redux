@@ -11,6 +11,7 @@ import { persistReducer } from 'redux-persist';
  */
 
 import { routerReducer } from 'react-router-redux';
+import { reducer as notificationsReducer } from 'reapop';
 
 import authenticationReducer from './authentication';
 
@@ -18,54 +19,16 @@ import authenticationReducer from './authentication';
  * List all reducers
  */
 
-const reducers = {
-    router: {
-        reducer: routerReducer,
-        persist: false
-    },
-    authentication: {
-        reducer: authenticationReducer,
-        whitelist: ['token']
-    }
+const authenticationPersistConfig = {
+    key: 'authentication',
+    storage: localForage,
+    whitelist: ['user', 'token']
 };
 
-/**
- * Combine all reducers
- */
-
-let persistedReducers = {};
-Object.keys(reducers).forEach(key => {
-
-    // Retrieve the object properties
-    let { reducer, ...props } = reducers[key];
-
-    if(reducers[key].persist === false) {
-        return persistedReducers[key] = reducer;
-    }
-
-    // Prepare config
-    let config = {
-        ...props,
-        key: key,
-        storage: localForage
-    };
-
-    // Create a new persisted reducer and store it
-    persistedReducers[key] = persistReducer(config, reducer);
-
+const rootReducer = combineReducers({
+    router: routerReducer,
+    notifications: notificationsReducer(),
+    authentication: persistReducer(authenticationPersistConfig, authenticationReducer),
 });
-
-// Merge all persisted reducers
-const appReducer = combineReducers(persistedReducers);
-
-// Add logout reset layer
-// const rootReducer = (state, action) => {
-//     if(action.type === logout.getType()) {
-//         state = undefined;
-//     }
-
-//     return appReducer(state, action);
-// };
-const rootReducer = appReducer;
 
 export default rootReducer;
