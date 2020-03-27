@@ -1,12 +1,12 @@
 {
-    "name": "leinelissen/laravel-preset-react-redux",
+    "name": "pimbutton/laravel-preset-react-redux",
     "description": "A Laravel front-end preset for a boilerplate including React and Redux",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Lei Nelissen",
-            "email": "lei@codified.nl"
+            "name": "Pim Knops",
+            "email": "pim@studiotast.com"
         }
     ],
     "require": {
